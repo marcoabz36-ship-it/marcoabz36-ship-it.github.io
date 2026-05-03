@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96" role="img" aria-label="Pre entreno Pro">
+  <rect width="96" height="96" rx="20" fill="#f3f4f6"/>
+  <path d="M27 32h42l-4 47H31l-4-47Z" fill="#111" stroke="#c90716" stroke-width="3"/>
+  <path d="M32 20h32l5 12H27l5-12Z" fill="#c90716"/>
+  <path d="M47 42 36 61h10l-2 14 15-25H49l-2-8Z" fill="#ffffff"/>
+  <circle cx="65" cy="24" r="7" fill="#ffd23c"/>
+</svg>

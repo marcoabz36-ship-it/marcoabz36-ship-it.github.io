@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96" role="img" aria-label="Sporade">
+  <rect width="96" height="96" rx="20" fill="#eaf7ff"/>
+  <path d="M36 17h24l-4 15v41a10 10 0 0 1-10 10h-1a10 10 0 0 1-10-10V32l1-15Z" fill="#ffffff" stroke="#0077b6" stroke-width="3"/>
+  <path d="M36 45h20v24H36z" fill="#0077b6"/>
+  <path d="M39 24h18" stroke="#c90716" stroke-width="5" stroke-linecap="round"/>
+  <path d="M41 55h10" stroke="#ffffff" stroke-width="4" stroke-linecap="round"/>
+</svg>

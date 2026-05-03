@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96" role="img" aria-label="Barra proteica chocolate">
+  <rect width="96" height="96" rx="20" fill="#fff5f5"/>
+  <rect x="17" y="33" width="62" height="30" rx="8" fill="#c90716"/>
+  <path d="M25 35h46l-7 26H18l7-26Z" fill="#4a2117"/>
+  <path d="M32 42h29" stroke="#ffffff" stroke-width="4" stroke-linecap="round"/>
+  <path d="M31 53h21" stroke="#f7c7b5" stroke-width="4" stroke-linecap="round"/>
+</svg>

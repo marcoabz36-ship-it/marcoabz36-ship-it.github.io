@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96" role="img" aria-label="Proteina">
+  <rect width="96" height="96" rx="20" fill="#fff1f2"/>
+  <path d="M28 27h40l4 48a9 9 0 0 1-9 10H33a9 9 0 0 1-9-10l4-48Z" fill="#111" stroke="#c90716" stroke-width="3"/>
+  <path d="M32 16h32v12H32z" fill="#c90716"/>
+  <path d="M33 45h30v22H33z" fill="#ffffff"/>
+  <path d="M39 56h18" stroke="#c90716" stroke-width="4" stroke-linecap="round"/>
+</svg>

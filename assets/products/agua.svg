@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96" role="img" aria-label="Agua">
+  <rect width="96" height="96" rx="20" fill="#eaf7ff"/>
+  <path d="M38 24h20l-3 10v39a9 9 0 0 1-9 9h-2a9 9 0 0 1-9-9V34l3-10Z" fill="#ffffff" stroke="#0077b6" stroke-width="3"/>
+  <path d="M36 47c7-5 15 5 22 0v18c-7 5-15-5-22 0V47Z" fill="#42b7e8"/>
+  <path d="M39 16h18v10H39z" fill="#0077b6"/>
+</svg>

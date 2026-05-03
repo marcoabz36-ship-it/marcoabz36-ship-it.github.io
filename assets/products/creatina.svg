@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96" role="img" aria-label="Creatina">
+  <rect width="96" height="96" rx="20" fill="#f6f6f6"/>
+  <path d="M31 26h34l5 50a8 8 0 0 1-8 9H34a8 8 0 0 1-8-9l5-50Z" fill="#ffffff" stroke="#111" stroke-width="3"/>
+  <path d="M34 15h28v12H34z" fill="#c90716"/>
+  <path d="M32 45h32v22H32z" fill="#fde8ea"/>
+  <path d="M38 57h20" stroke="#c90716" stroke-width="4" stroke-linecap="round"/>
+</svg>
