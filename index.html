@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gimnasio Admin</title>
+    <link rel="stylesheet" href="styles.css?v=5" />
+  </head>
+  <body>
+    <main id="loginScreen" class="login-shell">
+      <section class="login-panel">
+        <p class="eyebrow">Gestion del gimnasio</p>
+        <h1>Ingreso administrador</h1>
+        <form id="loginForm" class="stack">
+          <label>
+            Usuario
+            <input id="username" name="username" autocomplete="username" required />
+          </label>
+          <label>
+            Contrasena
+            <input id="password" name="password" type="password" autocomplete="current-password" required />
+          </label>
+          <button class="primary wide" type="submit">Ingresar</button>
+          <p id="loginMessage" class="form-message"></p>
+        </form>
+      </section>
+    </main>
+
+    <div id="appShell" class="app-shell hidden">
+      <aside class="sidebar">
+        <div class="brand">
+          <img class="brand-logo" src="assets/logo-balarezo-gym.jpeg" alt="Logo Balarezo Gym" />
+          <div>
+            <strong>BALAREZO GYM</strong>
+            <small>PANEL DE VENTAS</small>
+          </div>
+        </div>
+        <nav class="nav-list" aria-label="Principal">
+          <button class="nav-button active" data-view="dashboard">Dashboard</button>
+          <button class="nav-button" data-view="clientes">Clientes</button>
+          <button class="nav-button" data-view="membresias">Membresias</button>
+          <button class="nav-button" data-view="ventas">Ventas rapidas</button>
+          <button class="nav-button" data-view="historial">Historial</button>
+        </nav>
+        <button id="logoutButton" class="ghost wide" type="button">Salir</button>
+      </aside>
+
+      <main class="content">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Hoy</p>
+            <h1 id="viewTitle">Dashboard</h1>
+          </div>
+          <div id="statusMessage" class="status-message" role="status"></div>
+        </header>
+
+        <section id="dashboardView" class="view active">
+          <div class="summary-grid">
+            <article class="summary-card accent-green">
+              <span>Ingresos del dia</span>
+              <strong id="incomeDay">S/ 0.00</strong>
+            </article>
+            <article class="summary-card accent-blue">
+              <span>Ingresos del mes</span>
+              <strong id="incomeMonth">S/ 0.00</strong>
+            </article>
+            <article class="summary-card accent-coral">
+              <span>Clientes activos</span>
+              <strong id="activeClients">0</strong>
+            </article>
+            <article class="summary-card accent-gold">
+              <span>Por vencer</span>
+              <strong id="expiringCount">0</strong>
+            </article>
+          </div>
+
+          <div class="dashboard-grid">
+            <section class="panel">
+              <div class="panel-head">
+                <h2>Ingresos recientes</h2>
+              </div>
+              <div id="incomeChart" class="bar-chart"></div>
+            </section>
+            <section class="panel">
+              <div class="panel-head">
+                <h2>Membresias por vencer</h2>
+              </div>
+              <div id="expiringList" class="list"></div>
+            </section>
+          </div>
+        </section>
+
+        <section id="clientesView" class="view">
+          <div class="split-layout">
+            <section class="panel">
+              <div class="panel-head">
+                <h2>Registrar cliente</h2>
+              </div>
+              <form id="clientForm" class="grid-form">
+                <input id="clientId" type="hidden" />
+                <label>
+                  Nombre
+                  <input id="clientName" required />
+                </label>
+                <label>
+                  Telefono
+                  <input id="clientPhone" />
+                </label>
+                <label>
+                  Inicio
+                  <input id="clientStart" type="date" required />
+                </label>
+                <label>
+                  Vencimiento
+                  <input id="clientEnd" type="date" required />
+                </label>
+                <div class="form-actions">
+                  <button class="primary" type="submit">Guardar</button>
+                  <button id="clearClientForm" class="ghost" type="button">Limpiar</button>
+                </div>
+              </form>
+            </section>
+
+            <section class="panel">
+              <div class="panel-head with-search">
+                <h2>Clientes</h2>
+                <input id="clientSearch" class="search" placeholder="Buscar cliente" />
+              </div>
+              <div id="clientList" class="list"></div>
+            </section>
+          </div>
+        </section>
+
+        <section id="membresiasView" class="view">
+          <section class="panel narrow-panel">
+            <div class="panel-head">
+              <h2>Registrar pago mensual</h2>
+            </div>
+            <form id="membershipForm" class="grid-form">
+              <label>
+                Cliente
+                <select id="membershipClient" required></select>
+              </label>
+              <label>
+                Fecha de pago
+                <input id="membershipDate" type="date" required />
+              </label>
+              <label>
+                Meses
+                <input id="membershipMonths" type="number" min="1" value="1" required />
+              </label>
+              <label>
+                Monto
+                <input id="membershipPrice" type="number" min="1" step="0.01" value="80" required />
+              </label>
+              <button class="primary wide" type="submit">Registrar membresia</button>
+            </form>
+          </section>
+        </section>
+
+        <section id="ventasView" class="view">
+          <div class="sales-layout">
+            <section class="panel">
+              <div class="panel-head sales-head">
+                <h2>Ventas en 1 clic</h2>
+                <button id="toggleProductForm" class="ghost small-button" type="button">Agregar producto</button>
+              </div>
+
+              <form id="productForm" class="product-form hidden">
+                <label>
+                  Producto
+                  <input id="newProductName" placeholder="Nombre del producto" />
+                </label>
+                <label>
+                  Precio
+                  <input id="newProductPrice" type="number" min="0.01" step="0.01" placeholder="0.00" />
+                </label>
+                <label class="image-picker">
+                  Imagen
+                  <input id="newProductImage" type="file" accept="image/*" />
+                  <span>Subir imagen</span>
+                </label>
+                <img id="newProductPreview" class="product-preview hidden" alt="" />
+                <div class="form-actions">
+                  <button class="primary" type="submit">Guardar producto</button>
+                  <button id="cancelProductForm" class="ghost" type="button">Cancelar</button>
+                </div>
+              </form>
+
+              <label class="soft-label">
+                Asociar a cliente
+                <select id="saleClient"></select>
+              </label>
+
+              <div class="sales-section-title">
+                <h3>Productos rapidos</h3>
+              </div>
+              <div id="productButtons" class="product-grid"></div>
+
+              <div class="sales-section-title large-title">
+                <h3>Ventas grandes</h3>
+              </div>
+              <div id="largeProductButtons" class="product-grid large-product-grid"></div>
+            </section>
+            <section class="panel">
+              <div class="panel-head">
+                <h2>Ultimas ventas</h2>
+              </div>
+              <div id="quickSalesList" class="list"></div>
+            </section>
+          </div>
+        </section>
+
+        <section id="historialView" class="view">
+          <section class="panel">
+            <div class="panel-head with-search">
+              <h2>Historial</h2>
+              <form id="historyFilter" class="filter-row">
+                <input id="historyDate" type="date" title="Filtrar por dia" />
+                <input id="historyMonth" type="month" title="Filtrar por mes" />
+                <select id="historyType">
+                  <option value="">Todo</option>
+                  <option value="producto">Productos</option>
+                  <option value="membresia">Membresias</option>
+                </select>
+                <button id="loadHistory" class="ghost" type="submit">Filtrar</button>
+              </form>
+            </div>
+            <div id="historySummary" class="history-summary"></div>
+            <div id="historyList" class="list"></div>
+          </section>
+        </section>
+      </main>
+    </div>
+
+    <div id="saleModal" class="modal hidden">
+      <form id="saleEditForm" class="modal-panel">
+        <input id="editSaleId" type="hidden" />
+        <input id="editSaleType" type="hidden" />
+        <div class="panel-head">
+          <h2>Editar venta</h2>
+          <button id="closeSaleModal" class="ghost small-button" type="button">Cerrar</button>
+        </div>
+        <div class="grid-form">
+          <label>
+            Producto
+            <input id="editSaleProduct" required />
+          </label>
+          <label>
+            Precio
+            <input id="editSalePrice" type="number" min="0.01" step="0.01" required />
+          </label>
+          <label>
+            Fecha
+            <input id="editSaleDate" type="datetime-local" required />
+          </label>
+          <label>
+            Cliente
+            <select id="editSaleClient"></select>
+          </label>
+          <div class="form-actions">
+            <button class="primary" type="submit">Guardar cambios</button>
+            <button id="cancelSaleEdit" class="ghost" type="button">Cancelar</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <script src="config.js?v=5"></script>
+    <script src="app.js?v=5"></script>
+  </body>
+</html>
